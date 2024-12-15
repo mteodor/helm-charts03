@@ -15,7 +15,7 @@ spec:
     metadata:
       name: '{{.path.basename}}'
     spec:
-      project: "xxxxx"
+      project: 65cce22b
       source:
         repoURL: https://github.com/argoproj/argo-cd.git
         targetRevision: HEAD
