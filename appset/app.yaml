@@ -7,22 +7,28 @@ spec:
   goTemplateOptions: ["missingkey=error"]
   generators:
     - git:
-        repoURL: https://github.com/mteodor/helm-charts
+        repoURL: https://github.com/mteodor/helm-charts03
         revision: HEAD
         directories:
           - path: charts/*
   template:
     metadata:
-      name: '{{.path.basename}}'
+      name: '{{.path.basename}}-03'
     spec:
+      # project: 3eb96a4d
       project: 65cce22b
       source:
-        repoURL: https://github.com/argoproj/argo-cd.git
+        repoURL: https://github.com/mteodor/helm-charts03
         targetRevision: HEAD
         path: '{{.path.path}}'
       destination:
-        name: cluster11
-        namespace: '{{.path.basename}}'-03
+        name: cluster22
+        namespace: '{{.path.basename}}-03'
       syncPolicy:
+        automated:
+          selfHeal: true
         syncOptions:
           - CreateNamespace=true
+          - Validate=true
+          - PruneLast=false
+ 
